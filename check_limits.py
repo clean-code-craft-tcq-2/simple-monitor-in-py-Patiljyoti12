@@ -1,4 +1,3 @@
-
 def print_warning(message):
     print("{} is out of range!".format(message))
 
@@ -26,3 +25,7 @@ def Chargerate_Ok(chargeRate):
     else:
         return True
 
+#Battery erification
+def battery_Ok(temperature,soc,chargeRate):
+    result =Temperature_Ok(temperature) and SOC_Ok(soc) and Chargerate_Ok(chargeRate)
+    return result
