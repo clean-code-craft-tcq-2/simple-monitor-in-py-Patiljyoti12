@@ -17,6 +17,20 @@ def test_chargerate_ok(chargeRate,expected_chargerate_result):
 def test_battery_ok(temperature,soc,chargeRate,expected_result):
     resultant_result=check_limits.battery_Ok(temperature,soc,chargeRate)
     assert(resultant_result==expected_result)
+    
+def test_temp_tolerance(temperature,expected_temptolerance_result):
+    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature)
+    assert(resultant_temptolerance_result==expected_temptolerance_result)
+    
+def test_soc_tolerance(soc,expected_soctolerance_result):
+    resultant_soctolerance_result=check_limits.check_soc_tolerance(soc)
+    assert( resultant_soctolerance_result==expected_soctolerance_result)
+    
+def test_chargerate_tolerance(chargeRate,expected_chargeRatetolerance_result):
+    resultant_chargeratetolerance_result=check_limits.check_chargerate_tolerance(chargeRate)
+    assert(resultant_chargeratetolerance_result==expected_chargeRatetolerance_result)
+    
+
 
     
 if __name__ == '__main__':
@@ -48,7 +62,27 @@ if __name__ == '__main__':
     test_battery_ok(25,106,0.8,False)
     test_battery_ok(20,80,0.9,False)
     
- 
+  #temperature_tolerance validation
+    test_temp_tolerance(0,"Warning:Temperature Approaching low")
+    test_temp_tolerance(1.25,"Warning:Temperature Approaching low")
+    test_temp_tolerance(43,"Warning:Temeprature Approaching high")
+    test_temp_tolerance(45,"Warning:Temeprature Approaching high")
+    test_temp_tolerance(30,"Temperature is OK")
+    test_temp_tolerance(35,"Temperature is OK")
+    
+    #soc_tolerance validation
+    test_soc_tolerance(20,"Warning:SOC Approaching discharge")
+    test_soc_tolerance(24,"Warning:SOC Approaching discharge")
+    test_soc_tolerance(77,"Warning:SOC Approaching charge-peak")
+    test_soc_tolerance(80,"Warning:SOC Approaching charge-peak")
+   
+    #chargerate_tolerance validation
+    test_chargerate_tolerance(0.76, "Warning:Charge rate Approaching peak")
+    test_chargerate_tolerance(0.77, "Warning:Charge rate Approaching peak")
+    test_chargerate_tolerance(0.9,"Warning:Charge Rate out of range")
+    test_chargerate_tolerance(0.6,"Charge Rate is OK")
+    test_chargerate_tolerance(0.5,"Charge Rate is OK")
+    
 
     
 
