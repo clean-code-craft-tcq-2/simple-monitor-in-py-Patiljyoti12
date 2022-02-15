@@ -1,94 +1,37 @@
 #Temperature_tolerance
-def check_temp_tolerance(temperature,language):
+def check_temp_tolerance(temperature):
     if (temperature<0 and  temperature>45):
-        if (language == 'English'):
-            temp_message="Temperature out of range"
-        elif (language == 'German'):
-            temp_message = "Temperatur außerhalb des Bereichs" 
-        elif (language=="Spanish"):
-            temp_message="Temperatura fuera de rango"
+        temp_message="Temperature out of range"
     elif (temperature>=0 and temperature<=(0+0.05*45)):
-        if (language == 'English'):
-            temp_message="Warning:Temperature Approaching low"
-        elif (language == 'German'):
-            temp_message = "Warnung: Temperatur nähert sich niedrig" 
-        elif (language=="Spanish"):
-            temp_message="Advertencia: temperatura acercándose a baja" 
+        temp_message="Warning:Temperature Approaching low"
     elif (temperature >=(45-0.05*45)and temperature<=45):
-        if (language == 'English'):
-            temp_message="Warning:Temeprature Approaching high"
-        elif (language == 'German'):
-            temp_message = "Warnung: Temperatur nähert sich hoch" 
-        elif (language=="Spanish"):
-            temp_message="Advertencia: temperatura acercándose a un nivel alto" 
+        temp_message="Warning:Temeprature Approaching high"
     else:
-        if (language == 'English'):
-            temp_message="Temperature is OK"
-        elif (language == 'German'):
-            temp_message = "Temperatur ist in Ordnung" 
-        elif (language=="Spanish"):
-            temp_message="La temperatura está bien" 
-        
-    return temp_message
+       temp_message="Temperature is OK"
+   return temp_message
    
 #soc_tolerance
-def check_soc_tolerance(soc,language):
+def check_soc_tolerance(soc):
     if(soc<20 and soc>80):
-        if (language == 'English'):
-            soc_message="State of Charge out of range"
-        elif (language == 'German'):
-            soc_message= "Ladezustand außerhalb des Bereichs"
-        elif (language=="Spanish"):
-            soc_message="Estado de carga fuera de rango" 
+        soc_message="State of Charge out of range"
     elif (soc>=20 and soc<=(20+0.05*80)): 
-        if (language == 'English'):
-            soc_message="Warning:SOC Approaching discharge"
-        elif (language == 'German'):
-            soc_message= "Warnung: SOC Entladung nähert sich"
-        elif (language=="Spanish"):
-            soc_message= "Advertencia: SOC acercándose a la descarga" 
+       soc_message="Warning:SOC Approaching discharge"
     elif(soc>=(80-0.05*80) and soc<=80):
-        if (language == 'English'):
-            soc_message="Warning:SOC Approaching charge-peak"
-        elif (language == 'German'):
-            soc_message= "Warnung:SOC Ladespitze nähert sich"
-        elif (language=="Spanish"):
-            soc_message="Advertencia: SOC se acerca al pico de carga" 
+       soc_message="Warning:SOC Approaching charge-peak"
     else:
-        if (language == 'English'):
-            soc_message="State of Charge is OK"
-        elif (language == 'German'):
-            soc_message= "Ladezustand ist OK" 
-        elif (language=="Spanish"):
-            soc_message="El estado de carga es correcto"
-    
-    return soc_message
+      soc_message="State of Charge is OK"
+   return soc_message
     
 #chargerate_tolerance
-def check_chargerate_tolerance(chargeRate,language):
+def check_chargerate_tolerance(chargeRate):
     if(chargeRate>0.8):
-        if (language == 'English'):
-           chargerate_message="Warning:Charge Rate out of range"   
-        elif (language == 'German'):
-           chargerate_message="Warnung: Laderate außerhalb des Bereichs"
-        elif (language=="Spanish"):
-           chargerate_message= "Advertencia: Tasa de carga fuera de rango" 
+       chargerate_message="Warning:Charge Rate out of range"   
     elif(chargeRate>=(0.8-0.05*0.8) and chargeRate<=0.8):
-        if (language == 'English'):
-            chargerate_message= "Warning:Charge rate Approaching peak"
-        elif (language == 'German'):
-            chargerate_message="Warnung: Laderate nähert sich dem Höhepunkt" 
-        elif (language=="Spanish"):
-            chargerate_message="Advertencia: Tasa de carga acercándose al pico" 
+        chargerate_message= "Warning:Charge rate Approaching peak"
     else:
-        if (language == 'English'):
-           chargerate_message="Charge Rate is OK"
-        elif (language == 'German'):
-           chargerate_message="Laderate ist OK" 
-        elif (language=="Spanish"):
-            chargerate_message="La tasa de carga está bien" 
-            
-   return chargerate_message
+       chargerate_message="Charge Rate is OK"
+        
+    return chargerate_message
 
 
 
