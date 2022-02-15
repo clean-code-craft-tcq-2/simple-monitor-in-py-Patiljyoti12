@@ -19,7 +19,7 @@ def test_battery_ok(temperature,soc,chargeRate,expected_result):
     assert(resultant_result==expected_result)
     
 def test_temp_tolerance(temperature,expected_temptolerance_result):
-    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature,)
+    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature)
     assert(resultant_temptolerance_result==expected_temptolerance_result)
     
 def test_soc_tolerance(soc,expected_soctolerance_result):
