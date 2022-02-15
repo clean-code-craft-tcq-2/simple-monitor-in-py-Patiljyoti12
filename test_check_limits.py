@@ -18,16 +18,16 @@ def test_battery_ok(temperature,soc,chargeRate,expected_result):
     resultant_result=check_limits.battery_Ok(temperature,soc,chargeRate)
     assert(resultant_result==expected_result)
     
-def test_temp_tolerance(temperature,language,expected_temptolerance_result):
-    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature,language)
+def test_temp_tolerance(temperature,expected_temptolerance_result):
+    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature,)
     assert(resultant_temptolerance_result==expected_temptolerance_result)
     
-def test_soc_tolerance(soc,language,expected_soctolerance_result):
-    resultant_soctolerance_result=check_limits.check_soc_tolerance(soc,language)
+def test_soc_tolerance(soc,expected_soctolerance_result):
+    resultant_soctolerance_result=check_limits.check_soc_tolerance(soc)
     assert( resultant_soctolerance_result==expected_soctolerance_result)
     
-def test_chargerate_tolerance(chargeRate,language,expected_chargeRatetolerance_result):
-    resultant_chargeratetolerance_result=check_limits.check_chargerate_tolerance(chargeRate,language)
+def test_chargerate_tolerance(chargeRate,expected_chargeRatetolerance_result):
+    resultant_chargeratetolerance_result=check_limits.check_chargerate_tolerance(chargeRate)
     assert(resultant_chargeratetolerance_result==expected_chargeRatetolerance_result)
     
 
@@ -69,22 +69,14 @@ if __name__ == '__main__':
     test_temp_tolerance(45,"English","Warning:Temeprature Approaching high")
     test_temp_tolerance(30,"English","Temperature is OK")
     test_temp_tolerance(35,"English","Temperature is OK")
-    test_temp_tolerance(1,"German","Warnung: Temperatur nähert sich niedrig" )
-    test_temp_tolerance(2,"Spanish","Advertencia: temperatura acercándose a baja")
-    test_temp_tolerance(44,"German","Warnung: Temperatur nähert sich hoch")
-    test_temp_tolerance(45,"Spanish","Advertencia: temperatura acercándose a un nivel alto")
-    test_temp_tolerance(30,"German","Temperatur ist in Ordnung")
-    test_temp_tolerance(35,"Spanish","La temperatura está bien")
+  
     
     #soc_tolerance validation
     test_soc_tolerance(20,"English","Warning:SOC Approaching discharge")
     test_soc_tolerance(24,"English","Warning:SOC Approaching discharge")
     test_soc_tolerance(77,"English","Warning:SOC Approaching charge-peak")
     test_soc_tolerance(80,"English","Warning:SOC Approaching charge-peak")
-    test_soc_tolerance(20,"German","Warnung: SOC Entladung nähert sich")
-    test_soc_tolerance(24,"Spanish","Advertencia: SOC acercándose a la descarga")
-    test_soc_tolerance(78,"German","Warnung:SOC Ladespitze nähert sich")
-    test_soc_tolerance(79,"Spanish","Advertencia: SOC se acerca al pico de carga")
+ 
     
     #chargerate_tolerance validation
     test_chargerate_tolerance(0.76,"English", "Warning:Charge rate Approaching peak")
@@ -92,11 +84,7 @@ if __name__ == '__main__':
     test_chargerate_tolerance(0.9,"English","Warning:Charge Rate out of range")
     test_chargerate_tolerance(0.6,"English","Charge Rate is OK")
     test_chargerate_tolerance(0.5,"English","Charge Rate is OK")
-    test_chargerate_tolerance(0.76,"German","Warnung: Laderate nähert sich dem Höhepunkt"  )
-    test_chargerate_tolerance(0.77,"Spanish","Advertencia: Tasa de carga acercándose al pico"  )
-    test_chargerate_tolerance(1.0,"German","Warnung: Laderate außerhalb des Bereichs" )
-    test_chargerate_tolerance(2.0,"Spanish","Advertencia: Tasa de carga fuera de rango")
-    
+  
     
     
 
