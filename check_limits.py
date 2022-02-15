@@ -8,7 +8,7 @@ def check_temp_tolerance(temperature):
         temp_message="Warning:Temeprature Approaching high"
     else:
        temp_message="Temperature is OK"
-   return temp_message
+    return temp_message
    
 #soc_tolerance
 def check_soc_tolerance(soc):
@@ -20,7 +20,7 @@ def check_soc_tolerance(soc):
        soc_message="Warning:SOC Approaching charge-peak"
     else:
       soc_message="State of Charge is OK"
-   return soc_message
+    return soc_message
     
 #chargerate_tolerance
 def check_chargerate_tolerance(chargeRate):
