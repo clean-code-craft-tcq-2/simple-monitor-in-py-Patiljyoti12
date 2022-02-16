@@ -67,8 +67,7 @@ if __name__ == '__main__':
     test_temp_tolerance(1.25,"Warning:Temperature Approaching low")
     test_temp_tolerance(43,"Warning:Temeprature Approaching high")
     test_temp_tolerance(45,"Warning:Temeprature Approaching high")
-    test_temp_tolerance(30,"Temperature is OK")
-    test_temp_tolerance(35,"Temperature is OK")
+   
   
     
     #soc_tolerance validation
