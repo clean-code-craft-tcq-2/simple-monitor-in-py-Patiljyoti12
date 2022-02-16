@@ -1,5 +1,5 @@
 import check_limits
-
+import check_tolerance
 def test_temperature_ok(temperature,expected_temp_result):
     resultant_temp_result =check_limits.Temperature_Ok(temperature)
     assert(resultant_temp_result==expected_temp_result)
@@ -19,15 +19,15 @@ def test_battery_ok(temperature,soc,chargeRate,expected_result):
     assert(resultant_result==expected_result)
     
 def test_temp_tolerance(temperature,expected_temptolerance_result):
-    resultant_temptolerance_result=check_limits.check_temp_tolerance(temperature)
+    resultant_temptolerance_result=check_tolerance.check_temp_tolerance(temperature)
     assert(resultant_temptolerance_result==expected_temptolerance_result)
     
 def test_soc_tolerance(soc,expected_soctolerance_result):
-    resultant_soctolerance_result=check_limits.check_soc_tolerance(soc)
+    resultant_soctolerance_result=check_tolerance.check_soc_tolerance(soc)
     assert( resultant_soctolerance_result==expected_soctolerance_result)
     
 def test_chargerate_tolerance(chargeRate,expected_chargeRatetolerance_result):
-    resultant_chargeratetolerance_result=check_limits.check_chargerate_tolerance(chargeRate)
+    resultant_chargeratetolerance_result=check_tolerance.check_chargerate_tolerance(chargeRate)
     assert(resultant_chargeratetolerance_result==expected_chargeRatetolerance_result)
     
 
