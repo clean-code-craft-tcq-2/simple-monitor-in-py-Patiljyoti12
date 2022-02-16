@@ -1,10 +1,10 @@
 #Temperature_tolerance
 def check_temp_tolerance(temperature):
-    #if(temperature>=0 and temperature<=(0+0.05*45)):
-        #print("Warning:Temperature Approaching low")
-    #elif (temperature >=(45-0.05*45)and temperature<=45):
-        #print("Warning:Temeprature Approaching high")
-    return (temperature <= 2.25) ? :"Warning:Temperature Approaching low" (temperature >= 42.75) ? "Warning:Temeprature Approaching high":"Temperature is OK"
+    if(temperature>=0 and temperature<=(0+0.05*45)):
+        print("Warning:Temperature Approaching low")
+    elif (temperature >=(45-0.05*45)and temperature<=45):
+        print("Warning:Temeprature Approaching high")
+    
     
    
 #soc_tolerance
