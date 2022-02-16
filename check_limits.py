@@ -4,7 +4,7 @@ def check_temp_tolerance(temperature):
         temp_message="Warning:Temperature Approaching low"
     elif (temperature >=(45-0.05*45)and temperature<=45):
         temp_message="Warning:Temeprature Approaching high"
-   return temp_message
+    return temp_message
    
 #soc_tolerance
 def check_soc_tolerance(soc):
