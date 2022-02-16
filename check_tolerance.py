@@ -2,28 +2,31 @@ import  range
 #Temperature_tolerance
 def check_temp_tolerance(temperature):
     if(temperature in range(0,2)):
-        print("Warning:Temperature Approaching low")
+        temp_message="Warning:Temperature Approaching low"
     elif (temperature in range(42,45)):
-        print("Warning:Temeprature Approaching high")
+        tempe_message="Warning:Temeprature Approaching high"
     else:
-        print("Temperature is within range")
+        temp_message="Temperature is within range"
+    return temp_message
     
     
    
 #soc_tolerance
 def check_soc_tolerance(soc):
     if (soc in range(20,24)): 
-       print("Warning:SOC Approaching discharge")
+       soc_message="Warning:SOC Approaching discharge"
     elif(soc in range(76,80)):
-       print("Warning:SOC Approaching charge-peak")
+       soc_message="Warning:SOC Approaching charge-peak"
     else:
-        print("SOC is within range")
+        soc_message="SOC is within range"
+    return soc_message
   
     
 #chargerate_tolerance
 def check_chargerate_tolerance(chargeRate):
     if(chargeRate>=(0.8-0.05*0.8) and chargeRate<=0.8):
-       print("Warning:Charge rate Approaching peak")
+       chargerate_message="Warning:Charge rate Approaching peak"
     else:
-       print("Charge Rate is OK")
+       chargerate_message="Charge Rate is OK"
+    return chargerate_message
    
